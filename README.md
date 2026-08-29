@@ -1,4 +1,4 @@
-# Taliferro Music
+![Taliferro Music](public/img/taliferro-music-banner.png)
 
 Static player frontend for [Taliferro Music Radio](https://music.taliferro.com) —
 plain HTML/CSS/JS, no build step. Plays the live HLS stream from the
