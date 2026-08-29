@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Taliferro Music Radio | Live Stream</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta content="telephone=no" name="format-detection" />
+  <meta name="HandheldFriendly" content="true" />
+  <meta name="description" content="Taliferro Music Radio — a live stream featuring Taliferro Music artists." />
+  <link rel="canonical" href="https://music.taliferro.com/" />
+  <!-- Icons -->
+  <link rel="icon" type="image/png" href="img/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
+  <link rel="shortcut icon" href="img/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="TaliferroMusic" />
+  <link rel="manifest" href="img/site.webmanifest" />
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://music.taliferro.com/#organization",
+      "name": "Taliferro Music",
+      "email": "info@taliferro.com",
+      "telephone": "+1-401-646-2662",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1424 11th Ave STE 400",
+        "addressLocality": "Seattle",
+        "addressRegion": "WA",
+        "postalCode": "98122",
+        "addressCountry": "US"
+      }
+    },
+    {
+      "@type": "RadioStation",
+      "@id": "https://music.taliferro.com/#station",
+      "name": "Taliferro Music Radio",
+      "url": "https://music.taliferro.com/",
+      "image": "https://music.taliferro.com/assets/cover-og.png",
+      "description": "Live stream featuring Taliferro Music artists across jazz, R&B, and electronic genres.",
+      "broadcastFrequency": "Online",
+      "areaServed": "Worldwide",
+      "inLanguage": "en",
+      "genre": ["Jazz", "R&B", "Electronic", "Downtempo"],
+      "parentOrganization": { "@id": "https://music.taliferro.com/#organization" },
+      "sameAs": [
+        "https://tunein.com/radio/Taliferro-Music-Radio-s358780/",
+        "https://themegaradio.com/en/station/taliferro-music-radio",
+        "https://streema.com/radios/Taliferro_Music_Radio"
+      ]
+    }
+  ]
+}
+</script>
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Taliferro Music Radio | Live Stream" />
+  <meta property="og:description" content="Press play. Live radio featuring Taliferro Music artists." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://music.taliferro.com/" />
+  <meta property="og:image" content="https://music.taliferro.com/assets/cover-og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Taliferro Music Radio logo" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Taliferro Music Radio | Live Stream" />
+  <meta name="twitter:description" content="Press play. Live radio featuring Taliferro Music artists." />
+  <meta name="twitter:image" content="https://music.taliferro.com/assets/cover-og.png" />
+  <meta name="twitter:image:alt" content="Taliferro Music Radio logo" />
+  <meta name="msapplication-TileColor" content="#0a0b0f" />
+  <meta name="theme-color" content="#0a0b0f" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&amp;display=swap" />
+  <style>
+    :root {
+      --tm-bg: #0a0b0f;
+      --tm-surface: #111319;
+      --tm-surface-2: #171a22;
+      --tm-border: rgba(255, 255, 255, 0.08);
+      --tm-text: rgba(255, 255, 255, 0.94);
+      --tm-muted: rgba(255, 255, 255, 0.52);
+      --tm-faint: rgba(255, 255, 255, 0.34);
+      --tm-accent: #4fe0c8;
+      --tm-accent-rgb: 79, 224, 200;
+      --tm-accent-ink: #04211c;
+      --tm-accent-2: #ffb545;
+      --tm-accent-2-rgb: 255, 181, 69;
+      --tm-accent-2-ink: #2b1400;
+      --tm-radius-lg: 20px;
+      --tm-radius-md: 14px;
+      --tm-radius-sm: 10px;
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --tm-bg: #f6f7f9;
+        --tm-surface: #ffffff;
+        --tm-surface-2: #f3f4f6;
+        --tm-border: rgba(15, 18, 25, 0.09);
+        --tm-text: rgba(15, 18, 25, 0.94);
+        --tm-muted: rgba(15, 18, 25, 0.54);
+        --tm-faint: rgba(15, 18, 25, 0.38);
+        --tm-accent: #0f9c85;
+        --tm-accent-rgb: 15, 156, 133;
+        --tm-accent-ink: #ffffff;
+        --tm-accent-2: #c2650a;
+        --tm-accent-2-rgb: 194, 101, 10;
+        --tm-accent-2-ink: #ffffff;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--tm-bg);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .tm-shell {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 56px 20px;
+    }
+
+    .tm-card {
+      width: min(1040px, 100%);
+    }
+
+    /* ---------- Header ---------- */
+    .tm-top {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .tm-titleRow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .tm-logo {
+      width: 40px;
+      height: 40px;
+      flex: none;
+      display: block;
+    }
+
+    .tm-title {
+      font-size: 34px;
+      font-weight: 800;
+      line-height: 1.1;
+      margin: 0 0 8px 0;
+      color: var(--tm-text);
+      letter-spacing: -0.03em;
+    }
+
+    .tm-sub {
+      margin: 0 0 10px 0;
+      color: var(--tm-muted);
+      font-size: 15px;
+      max-width: 46ch;
+    }
+
+    .tm-tags {
+      margin: 0;
+      color: var(--tm-faint);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .tm-copy {
+      background: none;
+      border: none;
+      padding: 8px 14px;
+      border: 1px solid var(--tm-border);
+      border-radius: 999px;
+      color: var(--tm-muted);
+      font-size: 13px;
+      font-family: inherit;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .tm-copy:hover {
+      color: var(--tm-text);
+      border-color: var(--tm-faint);
+    }
+
+    /* ---------- Grid ---------- */
+    .tm-grid {
+      display: grid;
+      grid-template-columns: 1.35fr 1fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    @media (max-width: 860px) {
+      .tm-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .tm-panel {
+      border: 1px solid var(--tm-border);
+      background: var(--tm-surface);
+      border-radius: var(--tm-radius-lg);
+      padding: 24px;
+    }
+
+    /* ---------- Player ---------- */
+    .tm-player-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .tm-eyebrow {
+      margin: 0;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--tm-faint);
+    }
+
+    .tm-statusPill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: var(--tm-surface-2);
+      border: 1px solid var(--tm-border);
+      color: var(--tm-text);
+      font-size: 12px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .tm-live-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--tm-accent);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--tm-accent) 25%, transparent);
+      flex: none;
+    }
+
+    .tm-mood-label {
+      margin-bottom: 8px;
+    }
+
+    .tm-moodRow {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      padding: 4px;
+      background: var(--tm-surface-2);
+      border-radius: 999px;
+      width: fit-content;
+      margin-bottom: 20px;
+    }
+
+    .tm-channelBtn {
+      padding: 8px 16px;
+      border-radius: 999px;
+      border: none;
+      background: transparent;
+      color: var(--tm-muted);
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s ease, color 0.15s ease;
+      text-transform: capitalize;
+    }
+
+    .tm-channelBtn:hover {
+      color: var(--tm-text);
+    }
+
+    .tm-channelBtn[aria-selected="true"] {
+      background: var(--tm-accent);
+      color: var(--tm-accent-ink);
+    }
+
+    /* ---------- Compact player bar ---------- */
+    .tm-playerBar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .tm-artThumbWrap {
+      flex: none;
+      width: 52px;
+      height: 52px;
+      border-radius: var(--tm-radius-sm);
+      overflow: hidden;
+      background: var(--tm-surface-2);
+      border: 1px solid var(--tm-border);
+    }
+
+    .tm-art {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .tm-art[hidden] {
+      display: none;
+    }
+
+    .tm-hiddenPlayer {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .tm-progressTrack {
+      margin-top: 12px;
+      height: 4px;
+      border-radius: 999px;
+      background: var(--tm-surface-2);
+      overflow: hidden;
+    }
+
+    .tm-progressFill {
+      height: 100%;
+      width: 0%;
+      background: var(--tm-accent);
+      border-radius: 999px;
+      transition: width 1s linear;
+    }
+
+    .tm-unmuteLink {
+      margin-top: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 20px;
+      border: none;
+      border-radius: 999px;
+      background: var(--tm-accent-2);
+      color: var(--tm-accent-2-ink);
+      font-family: inherit;
+      font-size: 14.5px;
+      font-weight: 700;
+      cursor: pointer;
+      animation: tm-unmute-pulse 1.8s ease-in-out infinite;
+    }
+
+    .tm-unmuteLink:hover {
+      transform: scale(1.03);
+    }
+
+    .tm-unmuteLink svg {
+      width: 17px;
+      height: 17px;
+      flex: none;
+    }
+
+    .tm-unmuteLink[hidden] {
+      display: none;
+    }
+
+    @keyframes tm-unmute-pulse {
+
+      0%,
+      100% {
+        box-shadow: 0 0 0 0 rgba(var(--tm-accent-2-rgb), 0.45);
+      }
+
+      50% {
+        box-shadow: 0 0 0 12px rgba(var(--tm-accent-2-rgb), 0);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .tm-unmuteLink {
+        animation: none;
+      }
+    }
+
+    .tm-transport-btn {
+      flex: none;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: none;
+      background: var(--tm-accent);
+      color: var(--tm-accent-ink);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: transform 0.15s ease;
+    }
+
+    .tm-transport-btn:hover {
+      transform: scale(1.05);
+    }
+
+    .tm-transport-btn svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .tm-transport-btn .icon-pause {
+      display: none;
+    }
+
+    .tm-transport-btn.is-playing .icon-play {
+      display: none;
+    }
+
+    .tm-transport-btn.is-playing .icon-pause {
+      display: block;
+    }
+
+    .tm-trackInfo {
+      min-width: 0;
+    }
+
+    .tm-track {
+      margin: 0;
+      color: var(--tm-text);
+      font-size: 16px;
+      font-weight: 700;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .tm-artist {
+      margin: 3px 0 0 0;
+      color: var(--tm-muted);
+      font-size: 13px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* ---------- Sidebar ---------- */
+    .tm-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .tm-sidebar>.tm-panel {
+      flex: 1;
+    }
+
+    .tm-panel h2 {
+      margin: 0 0 4px 0;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--tm-faint);
+    }
+
+    .tm-rows {
+      margin: 8px 0 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .tm-row {
+      padding: 13px 0;
+      border-top: 1px solid var(--tm-border);
+    }
+
+    .tm-row:first-child {
+      border-top: none;
+    }
+
+    .tm-rowHead {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .tm-rowTitle {
+      color: var(--tm-text);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .tm-rowMeta {
+      color: var(--tm-muted);
+      font-size: 12.5px;
+    }
+
+    .tm-row .tm-rowHead+.tm-rowMeta {
+      display: block;
+      margin-top: 2px;
+    }
+
+    .tm-rowLinks {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .tm-rowLinks a {
+      color: var(--tm-faint);
+      font-size: 12.5px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .tm-rowLinks a:hover {
+      color: var(--tm-accent);
+    }
+
+    /* ---------- Footer ---------- */
+    .tm-foot {
+      margin-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .tm-foot small {
+      color: var(--tm-faint);
+      font-size: 12px;
+    }
+
+    .tm-link {
+      color: var(--tm-muted);
+      text-decoration: none;
+    }
+
+    .tm-link:hover {
+      color: var(--tm-text);
+    }
+
+    /* ---------- Phone overrides (must come after the rules above to win the cascade) ---------- */
+    @media (max-width: 600px) {
+
+      /* Featured artists add a lot of scroll length for little payoff on a phone —
+         keep the phone experience focused on the player itself. */
+      .tm-sidebar {
+        display: none;
+      }
+
+      /* Channel names come from the backend at runtime, so a fixed-width wrapped
+         pill row can't be trusted to fit — let it scroll on one line instead. */
+      .tm-moodRow {
+        flex-wrap: nowrap;
+        width: 100%;
+        overflow-x: auto;
+        scrollbar-width: none;
+      }
+
+      .tm-moodRow::-webkit-scrollbar {
+        display: none;
+      }
+
+      .tm-channelBtn {
+        flex: none;
+        white-space: nowrap;
+      }
+
+      /* Trim the header so the compact player bar clears the fold on a phone
+         instead of requiring a scroll to find it. */
+      .tm-shell {
+        padding-top: 24px;
+      }
+
+      .tm-top {
+        margin-bottom: 16px;
+      }
+
+      .tm-moodRow {
+        margin-bottom: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="tm-shell">
+    <div class="tm-card">
+      <div class="tm-top">
+        <div>
+          <div class="tm-titleRow">
+            <img class="tm-logo" src="img/favicon-96x96.png" alt="" width="40" height="40" />
+            <h1 class="tm-title">Taliferro Music Radio</h1>
+          </div>
+          <p class="tm-sub">Live stream featuring Taliferro Music artists. Press play and let it ride.</p>
+          <p class="tm-tags">Live · 24/7 · Taliferro Music Artists</p>
+        </div>
+        <a href="#" id="tm-copy-link" class="tm-copy" aria-label="copy station link">Copy link</a>
+      </div>
+      <div class="tm-grid">
+        <!-- LEFT: PLAYER -->
+        <section class="tm-panel" aria-label="radio player">
+          <div class="tm-player-head">
+            <p class="tm-eyebrow">Listen now</p>
+            <div class="tm-statusPill">
+              <span class="tm-live-dot" aria-hidden="true"></span>
+              <span id="tm-status">Ready</span>
+            </div>
+          </div>
+          <p class="tm-eyebrow tm-mood-label">Mood</p>
+          <div class="tm-moodRow" id="tm-channels" role="tablist" aria-label="mood switcher">
+            <!-- populated from /channels -->
+          </div>
+          <div class="tm-playerBar">
+            <div class="tm-artThumbWrap">
+              <img class="tm-art" id="tm-art" alt="" src="https://radio.taliferro.com/assets/cover.jpg" />
+            </div>
+            <button type="button" id="tm-playpause" class="tm-transport-btn" aria-label="play or pause">
+              <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+              <svg class="icon-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M6 5h4v14H6zM14 5h4v14h-4z" />
+              </svg>
+            </button>
+            <div class="tm-trackInfo">
+              <p class="tm-track" id="tm-now-track">Station warm-up</p>
+              <p class="tm-artist" id="tm-now-artist">Taliferro Music</p>
+            </div>
+          </div>
+          <div class="tm-progressTrack" aria-hidden="true">
+            <div class="tm-progressFill" id="tm-progress-fill"></div>
+          </div>
+          <button type="button" id="tm-unmute" class="tm-unmuteLink" aria-label="Tap for sound">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M3 10v4h4l5 5V5L7 10H3zm13.5 2a4.5 4.5 0 0 0-2.5-4.03v8.05A4.5 4.5 0 0 0 16.5 12z" />
+            </svg> Tap for sound </button>
+          <!-- Audio-only stream played through a hidden <video> element: hls.js +
+               muted autoplay is reliably supported on <video>, not on <audio>. -->
+          <video id="tm-audio-el" class="tm-hiddenPlayer" preload="metadata" muted autoplay playsinline data-base-url="https://radio.taliferro.com"></video>
+        </section>
+        <!-- RIGHT: SCHEDULE + CTA -->
+        <aside class="tm-sidebar" aria-label="station info">
+          <div class="tm-panel">
+            <h2>Featured</h2>
+            <ul class="tm-rows" aria-label="artist list">
+              <li class="tm-row">
+                <div class="tm-rowTitle">Calima Shatiday</div>
+                <div class="tm-rowMeta">Downtempo • Chillout</div>
+                <div class="tm-rowLinks" aria-label="Calima Shatiday links">
+                  <a href="https://music.apple.com/us/artist/calima-shatiday/307747843" target="_blank" rel="noopener">Apple Music</a>
+                  <a href="https://open.spotify.com/artist/0dvd9DVM2vF5JIIVMQvzQm" target="_blank" rel="noopener">Spotify</a>
+                </div>
+              </li>
+              <li class="tm-row">
+                <div class="tm-rowTitle">Trestal</div>
+                <div class="tm-rowMeta">Electronic • Experimental</div>
+                <div class="tm-rowLinks" aria-label="Trestal links">
+                  <a href="https://music.apple.com/us/artist/trestal/306791410" target="_blank" rel="noopener">Apple Music</a>
+                  <a href="https://open.spotify.com/artist/52ZEBVXi2S20Tw7mqw1ijB" target="_blank" rel="noopener">Spotify</a>
+                </div>
+              </li>
+              <li class="tm-row">
+                <div class="tm-rowTitle">Kerboo</div>
+                <div class="tm-rowMeta">R&B • HipHop</div>
+                <div class="tm-rowLinks" aria-label="Kerboo links">
+                  <a href="https://music.apple.com/us/artist/kerboo/673637442" target="_blank" rel="noopener">Apple Music</a>
+                  <a href="https://open.spotify.com/artist/1vQz9DbSIDoabSCxFNFnyT" target="_blank" rel="noopener">Spotify</a>
+                </div>
+              </li>
+              <li class="tm-row">
+                <div class="tm-rowTitle">B T S</div>
+                <div class="tm-rowMeta">Electronic • Dance Music</div>
+                <div class="tm-rowLinks">
+                  <a href="https://b-t-s.bandcamp.com/" target="_blank" rel="noopener">Bandcamp</a>
+                </div>
+              </li>
+              <li class="tm-row">
+                <div class="tm-rowTitle">Ty Showers</div>
+                <div class="tm-rowMeta">Jazz • Fusion</div>
+                <div class="tm-rowLinks">
+                  <a href="https://tyshowers.bandcamp.com/" target="_blank" rel="noopener">Bandcamp</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+      <div class="tm-foot">
+        <small>© <span id="tm-year"></span> Taliferro Music</small>
+        <small><a class="tm-link" href="/about">About</a></small>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <script>
+    (function () {
+      var yearEl = document.getElementById('tm-year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+      var audio = document.getElementById('tm-audio-el');
+      var artEl = document.getElementById('tm-art');
+      var statusEl = document.getElementById('tm-status');
+      var trackEl = document.getElementById('tm-now-track');
+      var artistEl = document.getElementById('tm-now-artist');
+      var unmuteBtn = document.getElementById('tm-unmute');
+      var playPauseBtn = document.getElementById('tm-playpause');
+      var channelsEl = document.getElementById('tm-channels');
+      var copyBtn = document.getElementById('tm-copy-link');
+
+      if (!audio) return;
+
+      var BASE_URL = (audio.dataset && audio.dataset.baseUrl) ? audio.dataset.baseUrl : '';
+      // Used only if /channels can't be reached (backend down / CORS issue on load)
+      var FALLBACK_CHANNELS = ['downtempo', 'jazzy', 'groove'];
+      var FALLBACK_DEFAULT = 'downtempo';
+
+      function setStatus(s) { try { if (statusEl) statusEl.textContent = s; } catch (e) { } }
+      function hideUnmuteBtn() { if (unmuteBtn) unmuteBtn.hidden = true; }
+
+      // Tap-for-sound: unmuting requires a user gesture, so this button provides it.
+      function unmute() {
+        audio.muted = false;
+        try { audio.play().catch(function () { }); } catch (e) { }
+        hideUnmuteBtn();
+      }
+      if (unmuteBtn) unmuteBtn.addEventListener('click', unmute);
+      audio.addEventListener('volumechange', function () {
+        if (!audio.muted) hideUnmuteBtn();
+      });
+
+      audio.addEventListener('play', function () { setStatus('Playing'); if (playPauseBtn) playPauseBtn.classList.add('is-playing'); });
+      audio.addEventListener('pause', function () { setStatus('Paused'); if (playPauseBtn) playPauseBtn.classList.remove('is-playing'); });
+      audio.addEventListener('waiting', function () { setStatus('Buffering'); });
+      audio.addEventListener('stalled', function () { setStatus('Stalled'); });
+      audio.addEventListener('error', function () { setStatus('Stream error'); });
+      audio.addEventListener('ended', function () { setStatus('Ended'); if (playPauseBtn) playPauseBtn.classList.remove('is-playing'); });
+
+      if (playPauseBtn) {
+        playPauseBtn.addEventListener('click', function () {
+          if (audio.paused) { try { audio.play().catch(function () { }); } catch (e) { } }
+          else { audio.pause(); }
+        });
+      }
+
+      // Copy link helper
+      if (copyBtn) {
+        copyBtn.addEventListener('click', function (e) {
+          e.preventDefault();
+          var url = window.location.href;
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(url).then(function () {
+              copyBtn.textContent = 'Copied';
+              setTimeout(function () { copyBtn.textContent = 'Copy link'; }, 1200);
+            });
+          }
+        });
+      }
+
+      // ---- channel-aware stream + now-playing ----
+      var currentChannel = null;
+      var hls = null;
+      var watchdog = null;
+      var nowPlayingTimer = null;
+
+      function streamUrlFor(name) { return BASE_URL + '/hls/' + name + '/index.m3u8'; }
+      function nowPlayingUrlFor(name) { return BASE_URL + '/now-playing/' + name; }
+
+      // ---- progress bar: server reports elapsed/duration once per poll (15s);
+      // interpolate between polls client-side so the bar fills smoothly instead
+      // of jumping every 15s. Purely visual, never touches audio playback. ----
+      var progressFillEl = document.getElementById('tm-progress-fill');
+      var progressState = { elapsedAtFetch: 0, durationSec: 0, fetchedAtMs: 0 };
+      var progressTicker = null;
+
+      function tickProgress() {
+        if (!progressFillEl) return;
+        if (!progressState.durationSec) {
+          progressFillEl.style.width = '0%';
+          return;
+        }
+        var elapsed = progressState.elapsedAtFetch + (Date.now() - progressState.fetchedAtMs) / 1000;
+        var pct = Math.max(0, Math.min(1, elapsed / progressState.durationSec)) * 100;
+        progressFillEl.style.width = pct + '%';
+      }
+
+      if (!progressTicker) progressTicker = setInterval(tickProgress, 1000);
+
+      function updateNowPlaying() {
+        if (!currentChannel) return;
+        fetch(nowPlayingUrlFor(currentChannel), { cache: 'no-store' })
+          .then(function (r) { return r.json(); })
+          .then(function (d) {
+            if (!d) return;
+            if (trackEl) trackEl.textContent = d.track || 'Live';
+            if (artistEl) artistEl.textContent = d.artist || 'Taliferro Music';
+            if (artEl && d.artUrl) artEl.src = d.artUrl;
+            progressState.elapsedAtFetch = d.trackElapsedSec || 0;
+            progressState.durationSec = d.trackDurationSec || 0;
+            progressState.fetchedAtMs = Date.now();
+            tickProgress();
+          })
+          .catch(function () { /* ignore */ });
+      }
+
+      function teardownHls() {
+        if (watchdog) { clearInterval(watchdog); watchdog = null; }
+        if (hls) { try { hls.destroy(); } catch (e) { } hls = null; }
+      }
+
+      function attachStream(url) {
+        teardownHls();
+
+        var hasHlsJs = window.Hls && window.Hls.isSupported();
+
+        // Prefer hls.js (MSE-based) whenever it's supported — some Chromium builds
+        // report canPlayType('application/vnd.apple.mpegurl') as "maybe" without
+        // actually handling adaptive HLS via native <audio src>, so native
+        // playback is only the fallback for browsers where hls.js can't run.
+        if (!hasHlsJs) {
+          if (audio.canPlayType('application/vnd.apple.mpegurl')) {
+            audio.src = url;
+            try { audio.play().catch(function () { }); } catch (e) { }
+          } else {
+            setStatus('HLS unsupported');
+            hideUnmuteBtn();
+          }
+          return;
+        }
+
+        setStatus('Buffering');
+        try { audio.crossOrigin = 'anonymous'; } catch (e) { }
+
+        hls = new window.Hls({
+          // No low-latency mode / live-edge catch-up: this is a 24/7 radio station,
+          // not a live event, so being a few seconds "behind live" is imperceptible.
+          // The catch-up mechanism speeds audio playbackRate up to 1.5x whenever the
+          // player falls behind — audible as sped-up/choppy audio, which is exactly
+          // what falling behind (e.g. from main-thread contention on a phone) caused.
+          liveSyncDurationCount: 5,
+          manifestLoadingTimeOut: 20000,
+          manifestLoadingMaxRetry: 6,
+          manifestLoadingRetryDelay: 1000,
+          levelLoadingTimeOut: 20000,
+          levelLoadingMaxRetry: 6,
+          levelLoadingRetryDelay: 1000,
+          fragLoadingTimeOut: 20000,
+          fragLoadingMaxRetry: 6,
+          fragLoadingRetryDelay: 1000,
+          fragLoadingMaxRetryTimeout: 64000
+        });
+
+        hls.on(window.Hls.Events.ERROR, function (_, data) {
+          try { if (data && data.details) setStatus('HLS: ' + data.details); } catch (e) { }
+          if (data && data.fatal) {
+            teardownHls();
+            setStatus('Stream error');
+          }
+        });
+
+        hls.on(window.Hls.Events.MANIFEST_LOADING, function () { setStatus('Loading manifest'); });
+        hls.on(window.Hls.Events.MANIFEST_LOADED, function () { setStatus('Manifest loaded'); });
+        hls.on(window.Hls.Events.LEVEL_LOADING, function () { setStatus('Loading stream'); });
+        hls.on(window.Hls.Events.FRAG_LOADING, function () { setStatus('Loading segment'); });
+        hls.on(window.Hls.Events.FRAG_LOADED, function () {
+          try { if (!audio.paused) setStatus('Playing'); } catch (e) { }
+        });
+
+        hls.loadSource(url);
+        hls.attachMedia(audio);
+        try { audio.play().catch(function () { }); } catch (e) { }
+
+        // Stall watchdog: if we stay buffering too long, rebuild the HLS instance
+        var lastProgressMs = Date.now();
+        watchdog = setInterval(function () {
+          try {
+            if (audio && !audio.paused && audio.readyState >= 2) {
+              lastProgressMs = Date.now();
+              return;
+            }
+            if (audio && !audio.paused && (Date.now() - lastProgressMs) > 12000) {
+              setStatus('Reconnecting');
+              attachStream(url);
+            }
+          } catch (e) { }
+        }, 1500);
+      }
+
+      function setActiveChannelButton(name) {
+        if (!channelsEl) return;
+        var btns = channelsEl.querySelectorAll('.tm-channelBtn');
+        for (var i = 0; i < btns.length; i++) {
+          btns[i].setAttribute('aria-selected', btns[i].dataset.channel === name ? 'true' : 'false');
+        }
+      }
+
+      function switchChannel(name, opts) {
+        if (name === currentChannel && !(opts && opts.force)) return;
+        currentChannel = name;
+        try { localStorage.setItem('tm-channel', name); } catch (e) { }
+        setActiveChannelButton(name);
+        attachStream(streamUrlFor(name));
+        progressState.elapsedAtFetch = 0;
+        progressState.durationSec = 0;
+        tickProgress();
+        updateNowPlaying();
+        if (nowPlayingTimer) clearInterval(nowPlayingTimer);
+        nowPlayingTimer = setInterval(updateNowPlaying, 15000);
+      }
+
+      function renderChannelButtons(names) {
+        if (!channelsEl) return;
+        channelsEl.innerHTML = '';
+        names.forEach(function (name) {
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'tm-channelBtn';
+          btn.textContent = name;
+          btn.dataset.channel = name;
+          btn.setAttribute('role', 'tab');
+          btn.setAttribute('aria-selected', 'false');
+          btn.addEventListener('click', function () { switchChannel(name); });
+          channelsEl.appendChild(btn);
+        });
+        setActiveChannelButton(currentChannel);
+      }
+
+      // Start playback synchronously, in the same script execution as page load —
+      // calling audio.play() later from inside a fetch().then() callback loses the
+      // browser's "trusted initial load" autoplay allowance and gets silently
+      // blocked (NotAllowedError) even though the element is muted. So the first
+      // channel has to start from a value we already know without waiting on the
+      // network: whatever was saved locally, or the hardcoded fallback default
+      // (kept in sync with the backend's own default channel choice).
+      var saved = null;
+      try { saved = localStorage.getItem('tm-channel'); } catch (e) { }
+      switchChannel(saved || FALLBACK_DEFAULT, { force: true });
+
+      // Separately, fetch the real channel list from the backend just to populate
+      // the switcher buttons — this doesn't touch playback, so it's fine to be async.
+      fetch(BASE_URL + '/channels', { cache: 'no-store' })
+        .then(function (r) { return r.json(); })
+        .then(function (d) {
+          var names = (d && d.channels && d.channels.length)
+            ? d.channels.map(function (c) { return c.name; })
+            : FALLBACK_CHANNELS;
+          renderChannelButtons(names);
+        })
+        .catch(function () {
+          renderChannelButtons(FALLBACK_CHANNELS);
+        });
+    })();
+  </script>
+</body>
+
+</html>

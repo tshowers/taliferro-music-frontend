@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Install Taliferro Music</title>
+  <link rel="icon" type="image/png" href="/img/favicon-96x96.png" sizes="96x96" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" />
+  <style>
+    :root {
+      --tm-bg: #0a0b0f;
+      --tm-surface: #111319;
+      --tm-border: rgba(255, 255, 255, 0.08);
+      --tm-text: rgba(255, 255, 255, 0.94);
+      --tm-muted: rgba(255, 255, 255, 0.52);
+      --tm-faint: rgba(255, 255, 255, 0.34);
+      --tm-accent: #4fe0c8;
+      --tm-accent-ink: #04211c;
+      --tm-radius-lg: 20px;
+      --tm-radius-md: 14px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--tm-bg);
+      color: var(--tm-text);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 420px;
+      background: var(--tm-surface);
+      border: 1px solid var(--tm-border);
+      border-radius: var(--tm-radius-lg);
+      padding: 28px;
+      text-align: center;
+    }
+
+    img.icon {
+      width: 84px;
+      height: 84px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: 22px;
+      margin: 0 0 8px;
+    }
+
+    p {
+      color: var(--tm-muted);
+      font-size: 14px;
+      line-height: 1.5;
+      margin: 0 0 20px;
+    }
+
+    .install-btn {
+      display: inline-block;
+      width: 100%;
+      background: var(--tm-accent);
+      color: var(--tm-accent-ink);
+      font-weight: 700;
+      font-size: 16px;
+      text-decoration: none;
+      padding: 14px 20px;
+      border-radius: var(--tm-radius-md);
+    }
+
+    .notes {
+      text-align: left;
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid var(--tm-border);
+    }
+
+    .notes h2 {
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--tm-faint);
+      margin: 0 0 10px;
+    }
+
+    .notes ol {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--tm-muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .notes li { margin-bottom: 8px; }
+    .notes code {
+      background: rgba(255,255,255,0.08);
+      padding: 1px 5px;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <img class="icon" src="/img/web-app-manifest-192x192.png" alt="" />
+    <h1>Taliferro Music</h1>
+    <p>Private beta build. This link only works on iPhones that have been registered for testing — if yours isn't set up yet, ask for that first.</p>
+    <a class="install-btn" href="itms-services://?action=download-manifest=url=https://music.taliferro.com/install/manifest.plist">
+      Install App
+    </a>
+    <div class="notes">
+      <h2>Before you tap install</h2>
+      <ol>
+        <li>Open this page in <strong>Safari</strong> on the iPhone itself — not Chrome, not a link preview inside Messages/Mail.</li>
+        <li>After it installs, the app icon will appear but won't open yet.</li>
+        <li>Go to <strong>Settings → General → VPN &amp; Device Management</strong>, tap the developer profile, and tap <strong>Trust</strong>.</li>
+        <li>Now open the app from your Home Screen.</li>
+      </ol>
+    </div>
+  </div>
+</body>
+
+</html>
