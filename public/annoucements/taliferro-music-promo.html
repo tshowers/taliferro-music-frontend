@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Taliferro Music Radio</title>
+  <meta name="description" content="Taliferro Music Radio — press play and let it ride.">
+  <style>
+    :root {
+      --bg:#0e1116;
+      --panel:#151a21;
+      --panel-2:#1b222b;
+      --text:#f5f7fa;
+      --muted:#9aa4af;
+      --line:#2a333f;
+      --accent:#12a98c;
+      --accent-2:#7ae0ca;
+      --white:#ffffff;
+    }
+    * { box-sizing:border-box; }
+    html,body { margin:0; padding:0; background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Arial,sans-serif; }
+    body {
+      min-height:100vh;
+      background:
+        radial-gradient(circle at 14% 18%, rgba(18,169,140,.13), transparent 34%),
+        radial-gradient(circle at 88% 82%, rgba(122,224,202,.07), transparent 30%),
+        var(--bg);
+    }
+    a { color:inherit; }
+    .wrap {
+      width:min(1180px, calc(100% - 40px));
+      margin:0 auto;
+      padding:28px 0 42px;
+    }
+    .topbar {
+      display:flex; align-items:center; justify-content:space-between;
+      gap:20px; padding:12px 0 30px;
+    }
+    .browser-link {
+      margin:0 0 18px; color:var(--muted); font-size:12px; text-align:center;
+    }
+    .browser-link a { color:var(--accent-2); font-weight:700; }
+    .brand {
+      font-weight:800; letter-spacing:-.03em; font-size:22px;
+    }
+    .brand span { color:var(--accent-2); }
+    .live {
+      display:inline-flex; align-items:center; gap:8px; color:var(--muted);
+      font-size:13px; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+    }
+    .dot {
+      width:8px; height:8px; border-radius:50%; background:var(--accent);
+      box-shadow:0 0 0 6px rgba(18,169,140,.12);
+    }
+    .hero {
+      display:grid; grid-template-columns:minmax(0,1.1fr) minmax(340px,.9fr);
+      gap:58px; align-items:center;
+      min-height:760px;
+    }
+    .eyebrow {
+      color:var(--accent-2); font-size:13px; font-weight:800;
+      letter-spacing:.14em; text-transform:uppercase; margin-bottom:18px;
+    }
+    h1 {
+      margin:0; max-width:720px; font-size:clamp(52px,7vw,96px);
+      line-height:.92; letter-spacing:-.06em; font-weight:850;
+    }
+    .lede {
+      margin:26px 0 0; max-width:660px; color:#c9d0d8;
+      font-size:clamp(20px,2.2vw,28px); line-height:1.35; letter-spacing:-.02em;
+    }
+    .cta-row {
+      display:flex; flex-wrap:wrap; gap:14px; margin-top:32px;
+    }
+    .btn {
+      display:inline-flex; align-items:center; justify-content:center;
+      min-height:50px; padding:0 22px; border-radius:999px;
+      text-decoration:none; font-weight:800; border:1px solid transparent;
+      transition:.2s ease;
+    }
+    .btn-primary { background:var(--accent); color:white; }
+    .btn-primary:hover { transform:translateY(-1px); filter:brightness(1.05); }
+    .btn-secondary { border-color:var(--line); color:#e9edf1; background:rgba(255,255,255,.02); }
+    .btn-secondary:hover { border-color:#43505f; }
+    .proof {
+      display:flex; flex-wrap:wrap; gap:10px 24px; margin-top:34px;
+      color:var(--muted); font-size:14px;
+    }
+    .proof b { color:#eef3f7; font-weight:700; }
+    .phone-stage {
+      position:relative; display:flex; justify-content:center;
+      padding:34px 24px 24px;
+    }
+    .glow {
+      position:absolute; inset:14% 8% 8%; border-radius:50%;
+      background:radial-gradient(circle, rgba(18,169,140,.23), transparent 68%);
+      filter:blur(12px);
+    }
+    .phone-shot {
+      position:relative; width:min(100%,444px); display:block;
+      filter:drop-shadow(0 28px 60px rgba(0,0,0,.46));
+    }
+    .strip {
+      margin-top:24px;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      display:grid; grid-template-columns:repeat(3,1fr);
+    }
+    .strip > div {
+      padding:26px 22px; border-right:1px solid var(--line);
+    }
+    .strip > div:last-child { border-right:0; }
+    .kicker {
+      color:var(--muted); font-size:12px; text-transform:uppercase;
+      letter-spacing:.12em; font-weight:800; margin-bottom:7px;
+    }
+    .value {
+      font-size:20px; font-weight:800; letter-spacing:-.02em;
+    }
+    footer {
+      display:flex; justify-content:space-between; gap:20px;
+      color:#727d89; font-size:12px; padding-top:24px;
+    }
+    @media (max-width:860px) {
+      .wrap { width:min(100% - 28px,700px); }
+      .hero { grid-template-columns:1fr; gap:30px; min-height:auto; }
+      .hero-copy { padding-top:26px; }
+      h1 { font-size:clamp(50px,15vw,78px); }
+      .phone-stage { padding-top:10px; }
+      .strip { grid-template-columns:1fr; }
+      .strip > div { border-right:0; border-bottom:1px solid var(--line); }
+      .strip > div:last-child { border-bottom:0; }
+      footer { flex-direction:column; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <p class="browser-link">Can’t see this email? <a href="https://music.taliferro.com/annoucements/taliferro-music-promo.html">View it in your browser</a>.</p>
+    <header class="topbar">
+      <div class="brand">Taliferro <span>Music</span></div>
+      <div class="live"><span class="dot"></span> Live · 24/7</div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">Taliferro Music Radio</div>
+        <h1>Press play.<br>Let it ride.</h1>
+        <p class="lede">
+          A continuous stream built for the background, the drive, the late-night build,
+          or the moment you just want the room to feel better.
+        </p>
+
+        <div class="cta-row">
+          <a class="btn btn-primary" href="https://music.taliferro.com" target="_blank" rel="noopener">Listen live</a>
+          <a class="btn btn-secondary" href="https://music.taliferro.com" target="_blank" rel="noopener">Open Taliferro Music</a>
+        </div>
+
+        <div class="proof">
+          <span><b>Three moods</b> · Downtempo, Groove, Jazzy</span>
+          <span><b>Always on</b> · 24/7</span>
+          <span><b>No hunting</b> · just press play</span>
+        </div>
+      </div>
+
+      <div class="phone-stage" aria-label="Taliferro Music Radio app preview">
+        <div class="glow"></div>
+        <img class="phone-shot" src="https://music.taliferro.com/assets/promotion/taliferro-music-screenshot.png" alt="Taliferro Music Radio mobile interface">
+      </div>
+    </section>
+
+    <section class="strip" aria-label="Taliferro Music highlights">
+      <div>
+        <div class="kicker">Pick a mood</div>
+        <div class="value">Downtempo. Groove. Jazzy.</div>
+      </div>
+      <div>
+        <div class="kicker">Discover</div>
+        <div class="value">Featured independent artists</div>
+      </div>
+      <div>
+        <div class="kicker">Keep it moving</div>
+        <div class="value">One link. Continuous listening.</div>
+      </div>
+    </section>
+
+    <footer>
+      <span>Taliferro Music Radio</span>
+      <span>Press play and let it ride.</span>
+    </footer>
+  </main>
+</body>
+</html>
