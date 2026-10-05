@@ -3,6 +3,10 @@
 
 <head>
   <meta charset="utf-8" />
+  <!-- Google tag (GA4 stream "Taliferro Music Radio") -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F3B4H3ENM0"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-F3B4H3ENM0");</script>
+  <script src="/js/ga-events.js" defer></script>
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
   <title>Privacy Policy | Taliferro Music Radio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -12,177 +16,98 @@
   <link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
   <link rel="shortcut icon" href="img/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&amp;display=swap" />
-  <style>
-    :root {
-      --tm-bg: #0a0b0f;
-      --tm-surface: #111319;
-      --tm-border: rgba(255, 255, 255, 0.08);
-      --tm-text: rgba(255, 255, 255, 0.94);
-      --tm-muted: rgba(255, 255, 255, 0.52);
-      --tm-faint: rgba(255, 255, 255, 0.34);
-      --tm-accent: #4fe0c8;
-      --tm-radius-lg: 20px;
-    }
-
-    @media (prefers-color-scheme: light) {
-      :root {
-        --tm-bg: #f6f7f9;
-        --tm-surface: #ffffff;
-        --tm-border: rgba(15, 18, 25, 0.09);
-        --tm-text: rgba(15, 18, 25, 0.94);
-        --tm-muted: rgba(15, 18, 25, 0.54);
-        --tm-faint: rgba(15, 18, 25, 0.38);
-        --tm-accent: #0f9c85;
-      }
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      background: var(--tm-bg);
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-      -webkit-font-smoothing: antialiased;
-      color: var(--tm-text);
-    }
-
-    .tm-shell {
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      padding: 56px 20px;
-    }
-
-    .tm-page {
-      width: min(720px, 100%);
-    }
-
-    .tm-back {
-      color: var(--tm-muted);
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    .tm-back:hover { color: var(--tm-text); }
-
-    h1 {
-      font-size: 32px;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      margin: 20px 0 4px;
-    }
-
-    .tm-tagline {
-      color: var(--tm-muted);
-      font-size: 14px;
-      margin: 0 0 32px;
-    }
-
-    .tm-panel {
-      border: 1px solid var(--tm-border);
-      background: var(--tm-surface);
-      border-radius: var(--tm-radius-lg);
-      padding: 24px;
-      margin-bottom: 20px;
-    }
-
-    .tm-panel h2 {
-      margin: 0 0 12px;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--tm-faint);
-    }
-
-    .tm-panel p, .tm-panel li {
-      margin: 0 0 10px;
-      color: var(--tm-text);
-      font-size: 15px;
-      line-height: 1.6;
-    }
-
-    .tm-panel ul {
-      margin: 0 0 10px;
-      padding-left: 20px;
-    }
-
-    .tm-panel p:last-child, .tm-panel ul:last-child { margin-bottom: 0; }
-
-    .tm-panel a {
-      color: var(--tm-accent);
-      text-decoration: none;
-    }
-
-    .tm-panel a:hover { text-decoration: underline; }
-
-    .tm-foot {
-      color: var(--tm-faint);
-      font-size: 12px;
-      margin-top: 8px;
-    }
-  </style>
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0c0e13" media="(prefers-color-scheme: dark)" />
+  <script>try{var t=localStorage.getItem('tt-theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t);document.documentElement.classList.add(t)}}catch(e){}</script>
+  <link rel="stylesheet" href="/tt/styles/tokens.css" />
+  <link rel="stylesheet" href="/tt/styles/universal-menu.css" />
+  <link rel="stylesheet" href="/tt/styles/app-header.css" />
+  <link rel="stylesheet" href="/css/music.css" />
 </head>
 
 <body>
-  <div class="tm-shell">
-    <div class="tm-page">
-      <a class="tm-back" href="/">&larr; Back to the live stream</a>
+  <header class="ah">
+    <a class="ah-brand" href="/">
+      <img class="ah-logo ah-logo--round" src="/img/apple-touch-icon.png" alt="" width="36" height="36" />
+      <span class="ah-name"><span class="ah-wide">Taliferro Music<small>Radio</small></span><span class="ah-phone">Music</span></span>
+    </a>
+    <div class="ah-actions">
+      <a class="ah-pill ah-pill--wide" href="/"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><polygon points="6 3 20 12 6 21 6 3" fill="currentColor"/></svg>Listen live</a>
+      <button type="button" class="ah-pill ah-theme" data-tt-theme aria-label="Switch theme"><span data-tt-theme-label>Dark</span></button>
+      <div data-tt-menu></div>
+    </div>
+  </header>
+
+  <main class="tm-main tm-privacy">
+    <aside>
       <h1>Privacy Policy</h1>
-      <p class="tm-tagline">Last updated August 29, 2026</p>
-
-      <div class="tm-panel">
+      <p>Last updated August 29, 2026</p>
+      <div class="tm-sum"><strong>No account</strong><span>Listen without signing up or giving any personal information.</span></div>
+      <div class="tm-sum"><strong>No trackers</strong><span>No analytics, advertising identifiers, or third-party trackers.</span></div>
+      <div class="tm-sum"><strong>Only your mood is remembered</strong><span>Stored on your own device, never sent to us.</span></div>
+    </aside>
+    <div class="tm-sections">
+      <section class="tm-section">
         <h2>Overview</h2>
-        <p>Taliferro Music Radio (the "Service") is a live internet radio stream operated by Taliferro Music, available at <a href="https://music.taliferro.com/">music.taliferro.com</a> and as an iOS app. This policy explains what information the Service does and does not collect.</p>
+        <p>Taliferro Music Radio (the "Service") is a live internet radio stream operated by Taliferro Music, available at music.taliferro.com and as an iOS app. This policy explains what information the Service does and does not collect.</p>
         <p>There is no account, sign-up, or login of any kind. You can listen without providing any personal information.</p>
-      </div>
-
-      <div class="tm-panel">
+      </section>
+      <section class="tm-section">
         <h2>Information we collect</h2>
         <p>We do not collect, store, or transmit any personal information about you. Specifically:</p>
-        <ul>
+        <ul class="tm-checks">
           <li>No account creation, email address, or name is ever requested.</li>
           <li>No analytics, advertising identifiers, or third-party trackers are embedded in the app or the website.</li>
           <li>No usage data, listening history, or device information is sent to our servers or to any third party.</li>
         </ul>
         <p>The only piece of information the Service remembers is your last-selected mood/channel (e.g. "Downtempo"), so the stream picks up where you left off next time. This preference is stored locally on your own device — in your browser's local storage on the web, or in your device's standard app settings on iOS — and is never transmitted anywhere or accessible to us.</p>
-      </div>
-
-      <div class="tm-panel">
+      </section>
+      <section class="tm-section">
         <h2>How the stream works</h2>
         <p>Playing the radio stream requires a network connection to our streaming servers to deliver audio and now-playing metadata (track title and artist). These requests are necessary for the Service to function and are handled the same way any audio stream or web page load works — they are not used to build a profile of you.</p>
-      </div>
-
-      <div class="tm-panel">
+      </section>
+      <section class="tm-section">
         <h2>Third-party links</h2>
         <p>Pages within the Service link out to third-party sites — for example, artist pages on Apple Music, Spotify, and Bandcamp, or other Taliferro-operated tools. Those sites have their own privacy policies, and this policy does not cover them.</p>
-      </div>
-
-      <div class="tm-panel">
+      </section>
+      <section class="tm-section">
         <h2>Children's privacy</h2>
         <p>The Service does not knowingly collect information from anyone, including children, because it does not collect personal information at all.</p>
-      </div>
-
-      <div class="tm-panel">
+      </section>
+      <section class="tm-section">
         <h2>Changes to this policy</h2>
         <p>If this policy changes, the updated version will be posted at this same address with a revised "Last updated" date above.</p>
-      </div>
-
-      <div class="tm-panel">
+      </section>
+      <section class="tm-section">
         <h2>Contact</h2>
-        <p>Questions about this policy can be sent to <a href="mailto:info@taliferro.com">info@taliferro.com</a> or <a href="tel:+14016462662">401.646.2662</a>.</p>
-      </div>
-
-      <p class="tm-foot">© <span id="tm-year"></span> Taliferro Music</p>
+        <p>Questions about this policy can be sent to <a href="mailto:info@taliferro.com">info@taliferro.com</a> or <a href="tel:4016462662">401.646.2662</a>.</p>
+      </section>
     </div>
-  </div>
+  </main>
+
+  <footer class="tm-foot">
+    <span class="tm-foot__left"><b>TALIFERRO MUSIC</b><a href="mailto:info@taliferro.com">info@taliferro.com</a><a href="tel:4016462662">401.646.2662</a><span>Seattle, Washington, USA</span></span>
+    <span class="tm-foot__left"><a href="/privacy">Privacy Policy</a><span>© 2026 Taliferro Music</span></span>
+  </footer>
   <script>
-    document.getElementById('tm-year').textContent = new Date().getFullYear();
+    window.TT_MENU = {
+      app: 'music',
+      name: 'Taliferro Music',
+      items: [
+        { label: 'Listen live', icon: 'play', url: '/' },
+        { label: 'About', icon: 'info', url: '/about' },
+        { label: 'Privacy', icon: 'shield', url: '/privacy', current: true }
+      ],
+      secondaryItems: [
+        { label: 'iOS App', icon: 'phone', url: 'https://apps.apple.com/us/app/taliferro-music-radio/id6806499542', external: true }
+      ],
+      accountNote: 'Music needs no account. Sign in to use the rest of TODD.',
+      signInUrl: 'https://todd.taliferro.tech/login',
+      signInLabel: 'Sign in with TODD'
+    };
   </script>
+  <script src="/tt/universal-menu.js" defer></script>
+  <script src="/tt/theme.js" defer></script>
 </body>
 
 </html>

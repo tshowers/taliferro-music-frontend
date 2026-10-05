@@ -3,6 +3,10 @@
 
 <head>
   <meta charset="utf-8" />
+  <!-- Google tag (GA4 stream "Taliferro Music Radio") -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F3B4H3ENM0"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-F3B4H3ENM0");</script>
+  <script src="/js/ga-events.js" defer></script>
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
   <title>About Taliferro Music Radio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -12,7 +16,6 @@
   <link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
   <link rel="shortcut icon" href="img/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png" />
-  <!-- Structured Data (JSON-LD) -->
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -54,335 +57,122 @@
   ]
 }
 </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&amp;display=swap" />
-  <link rel="stylesheet" href="css/music-menu.css" />
-  <style>
-    :root {
-      --tm-bg: #0a0b0f;
-      --tm-surface: #111319;
-      --tm-border: rgba(255, 255, 255, 0.08);
-      --tm-text: rgba(255, 255, 255, 0.94);
-      --tm-muted: rgba(255, 255, 255, 0.52);
-      --tm-faint: rgba(255, 255, 255, 0.34);
-      --tm-accent: #4fe0c8;
-      --tm-radius-lg: 20px;
-    }
-
-    @media (prefers-color-scheme: light) {
-      :root {
-        --tm-bg: #f6f7f9;
-        --tm-surface: #ffffff;
-        --tm-border: rgba(15, 18, 25, 0.09);
-        --tm-text: rgba(15, 18, 25, 0.94);
-        --tm-muted: rgba(15, 18, 25, 0.54);
-        --tm-faint: rgba(15, 18, 25, 0.38);
-        --tm-accent: #0f9c85;
-      }
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      background: var(--tm-bg);
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-      -webkit-font-smoothing: antialiased;
-      color: var(--tm-text);
-    }
-
-    .tm-shell {
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      padding: 56px 20px;
-    }
-
-    .tm-page {
-      width: min(720px, 100%);
-    }
-
-    .tm-back {
-      color: var(--tm-muted);
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    .tm-back:hover { color: var(--tm-text); }
-
-    h1 {
-      font-size: 32px;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      margin: 20px 0 4px;
-    }
-
-    .tm-tagline {
-      color: var(--tm-muted);
-      font-size: 16px;
-      margin: 0 0 32px;
-    }
-
-    .tm-panel {
-      border: 1px solid var(--tm-border);
-      background: var(--tm-surface);
-      border-radius: var(--tm-radius-lg);
-      padding: 24px;
-      margin-bottom: 20px;
-    }
-
-    .tm-panel h2 {
-      margin: 0 0 12px;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--tm-faint);
-    }
-
-    .tm-panel p {
-      margin: 0 0 10px;
-      color: var(--tm-text);
-      font-size: 15px;
-      line-height: 1.6;
-    }
-
-    .tm-panel p:last-child { margin-bottom: 0; }
-
-    .tm-facts {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .tm-facts li {
-      display: flex;
-      gap: 8px;
-      padding: 10px 0;
-      border-top: 1px solid var(--tm-border);
-      font-size: 14.5px;
-    }
-
-    .tm-facts li:first-child { border-top: none; padding-top: 0; }
-
-    .tm-facts .tm-label {
-      flex: none;
-      width: 110px;
-      color: var(--tm-faint);
-      font-weight: 600;
-    }
-
-    .tm-facts a {
-      color: var(--tm-accent);
-      text-decoration: none;
-    }
-
-    .tm-facts a:hover { text-decoration: underline; }
-
-    .tm-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .tm-links a {
-      color: var(--tm-text);
-      text-decoration: none;
-      font-size: 13.5px;
-      font-weight: 600;
-      padding: 8px 14px;
-      border: 1px solid var(--tm-border);
-      border-radius: 999px;
-    }
-
-    .tm-links a:hover { border-color: var(--tm-accent); color: var(--tm-accent); }
-
-    .tm-toolGrid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-    }
-
-    @media (max-width: 600px) {
-      .tm-toolGrid { grid-template-columns: 1fr; }
-    }
-
-    .tm-toolCard {
-      border: 1px solid var(--tm-border);
-      border-radius: 14px;
-      padding: 16px;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .tm-toolIcon {
-      width: 40px;
-      height: 40px;
-      object-fit: contain;
-      border-radius: 8px;
-      margin-bottom: 10px;
-      display: block;
-    }
-
-    .tm-toolCard h3 {
-      margin: 0 0 6px;
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--tm-text);
-    }
-
-    .tm-toolCard p {
-      margin: 0 0 12px;
-      font-size: 13px;
-      line-height: 1.5;
-      color: var(--tm-muted);
-      flex: 1;
-    }
-
-    .tm-toolCta {
-      color: var(--tm-accent);
-      text-decoration: none;
-      font-size: 13.5px;
-      font-weight: 700;
-    }
-
-    .tm-toolCta:hover { text-decoration: underline; }
-
-    .tm-toolCaption {
-      margin-top: 6px;
-      font-size: 11.5px;
-      color: var(--tm-faint);
-    }
-
-    .tm-foot {
-      color: var(--tm-faint);
-      font-size: 12px;
-      margin-top: 8px;
-    }
-  </style>
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0c0e13" media="(prefers-color-scheme: dark)" />
+  <script>try{var t=localStorage.getItem('tt-theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t);document.documentElement.classList.add(t)}}catch(e){}</script>
+  <link rel="stylesheet" href="/tt/styles/tokens.css" />
+  <link rel="stylesheet" href="/tt/styles/universal-menu.css" />
+  <link rel="stylesheet" href="/tt/styles/app-header.css" />
+  <link rel="stylesheet" href="/css/music.css" />
 </head>
 
 <body>
-  <button class="platform-menu-trigger" type="button" data-platform-menu-open aria-controls="platform-menu-panel" aria-expanded="false" aria-label="Open menu"><span class="platform-menu-trigger__bars" aria-hidden="true"><i></i><i></i><i></i></span><span class="platform-menu-trigger__label">Menu</span></button>
-  <div class="platform-menu-overlay" data-platform-menu-overlay></div>
-  <div id="platform-menu-panel" class="platform-menu-panel" data-platform-menu-panel role="dialog" aria-label="Taliferro apps" aria-hidden="true">
-    <div class="platform-menu-panel__inner"><div class="tm-menu-body"><div class="tm-menu-products"><span class="platform-menu-eyebrow">Products</span><div class="platform-menu-launcher">
-      <a class="platform-menu-app" href="https://ask.taliferro.tech" target="_blank" rel="noopener noreferrer"><span class="platform-menu-app__icon"><img src="img/platform-menu/todd/logo-bw-icon.png" alt="" /></span><span class="platform-menu-app__label">Ask TODD</span><span class="platform-menu-app__description">Turn uncertainty into the next move.</span></a>
-      <a class="platform-menu-app" href="https://network.taliferro.tech" target="_blank" rel="noopener noreferrer"><span class="platform-menu-app__icon"><img src="img/platform-menu/network/logo-bw-icon.png" alt="" /></span><span class="platform-menu-app__label">Network</span><span class="platform-menu-app__description">Know who matters before the moment passes.</span></a>
-      <a class="platform-menu-app" href="https://docs.taliferro.tech" target="_blank" rel="noopener noreferrer"><span class="platform-menu-app__icon"><img src="img/platform-menu/docs/logo-bw-icon.png" alt="" /></span><span class="platform-menu-app__label">Docs</span><span class="platform-menu-app__description">Give your best thinking somewhere to live.</span></a>
-      <a class="platform-menu-app" href="https://moves.taliferro.tech" target="_blank" rel="noopener noreferrer"><span class="platform-menu-app__icon"><img src="img/platform-menu/moves/logo-bw-icon.png" alt="" /></span><span class="platform-menu-app__label">Moves</span><span class="platform-menu-app__description">Make progress visible and actionable.</span></a>
-      <a class="platform-menu-app" href="https://pulse.taliferro.tech" target="_blank" rel="noopener noreferrer"><span class="platform-menu-app__icon"><img src="img/platform-menu/pulse/logo-bw-icon.png" alt="" /></span><span class="platform-menu-app__label">Pulse</span><span class="platform-menu-app__description">Hear what people are really saying.</span></a>
-      <a class="platform-menu-app" href="https://social.taliferro.tech" target="_blank" rel="noopener noreferrer"><span class="platform-menu-app__icon"><img src="img/platform-menu/social/logo-bw-icon.png" alt="" /></span><span class="platform-menu-app__label">Social</span><span class="platform-menu-app__description">Stay visible without living online.</span></a>
-      <a class="platform-menu-app" href="https://lead-vault.taliferro.tech" target="_blank" rel="noopener noreferrer"><span class="platform-menu-app__icon"><img src="img/platform-menu/lead-vault/logo-bw-icon.png" alt="" /></span><span class="platform-menu-app__label">Lead Vault</span><span class="platform-menu-app__description">Find the people behind the opportunity.</span></a>
-      <a class="platform-menu-app" href="https://maya.taliferro.tech" target="_blank" rel="noopener noreferrer"><span class="platform-menu-app__icon"><img src="img/platform-menu/maya/logo-bw.png" alt="" /></span><span class="platform-menu-app__label">Maya</span><span class="platform-menu-app__description">Think like your marketing director.</span></a>
-      <a class="platform-menu-app" href="https://sayit.taliferro.tech" target="_blank" rel="noopener noreferrer"><span class="platform-menu-app__icon"><img src="img/platform-menu/sayit/logo-bw-icon.png" alt="" /></span><span class="platform-menu-app__label">SayIt</span><span class="platform-menu-app__description">Make your message worth sharing.</span></a>
-      <a class="platform-menu-app" href="https://find.taliferro.tech" target="_blank" rel="noopener noreferrer"><span class="platform-menu-app__icon"><img src="img/platform-menu/find/logo-bw-icon.png" alt="" /></span><span class="platform-menu-app__label">Find</span><span class="platform-menu-app__description">Get to the answer faster.</span></a>
-      <a class="platform-menu-app" href="https://signature.taliferro.tech" target="_blank" rel="noopener noreferrer"><span class="platform-menu-app__icon"><img src="img/platform-menu/email-signature-builder/logo-bw-icon.png" alt="" /></span><span class="platform-menu-app__label">Email Signature</span><span class="platform-menu-app__description">Make every email carry your brand.</span></a>
-      <a class="platform-menu-app" href="https://music.taliferro.com" aria-current="page"><span class="platform-menu-app__icon"><img src="img/platform-menu/music/logo-bw-icon.png" alt="" /></span><span class="platform-menu-app__label">Music</span><span class="platform-menu-app__description">Let the soundtrack keep moving.</span></a>
-    </div></div>
-      <aside class="tm-menu-station" aria-label="Taliferro Music">
-        <span class="platform-menu-eyebrow">Featured artists</span>
-        <ul class="tm-menu-artists">
-          <li class="tm-menu-artist" data-artist="Calima Shatiday"><div class="tm-menu-artist__name">Calima Shatiday</div><div class="tm-menu-artist__meta">Downtempo • Chillout</div><div class="tm-menu-artist__links" aria-label="Calima Shatiday links"><a href="https://music.apple.com/us/artist/calima-shatiday/307747843" target="_blank" rel="noopener">Apple Music</a><a href="https://open.spotify.com/artist/0dvd9DVM2vF5JIIVMQvzQm" target="_blank" rel="noopener">Spotify</a></div></li>
-          <li class="tm-menu-artist" data-artist="Trestal"><div class="tm-menu-artist__name">Trestal</div><div class="tm-menu-artist__meta">Electronic • Experimental</div><div class="tm-menu-artist__links" aria-label="Trestal links"><a href="https://music.apple.com/us/artist/trestal/306791410" target="_blank" rel="noopener">Apple Music</a><a href="https://open.spotify.com/artist/52ZEBVXi2S20Tw7mqw1ijB" target="_blank" rel="noopener">Spotify</a></div></li>
-          <li class="tm-menu-artist" data-artist="Kerboo"><div class="tm-menu-artist__name">Kerboo</div><div class="tm-menu-artist__meta">R&amp;B • HipHop</div><div class="tm-menu-artist__links" aria-label="Kerboo links"><a href="https://music.apple.com/us/artist/kerboo/673637442" target="_blank" rel="noopener">Apple Music</a><a href="https://open.spotify.com/artist/1vQz9DbSIDoabSCxFNFnyT" target="_blank" rel="noopener">Spotify</a></div></li>
-          <li class="tm-menu-artist" data-artist="B T S"><div class="tm-menu-artist__name">B T S</div><div class="tm-menu-artist__meta">Electronic • Dance Music</div><div class="tm-menu-artist__links" aria-label="B T S links"><a href="https://b-t-s.bandcamp.com/" target="_blank" rel="noopener">Bandcamp</a></div></li>
-          <li class="tm-menu-artist" data-artist="Ty Showers"><div class="tm-menu-artist__name">Ty Showers</div><div class="tm-menu-artist__meta">Jazz • Fusion</div><div class="tm-menu-artist__links" aria-label="Ty Showers links"><a href="https://tyshowers.bandcamp.com/" target="_blank" rel="noopener">Bandcamp</a></div></li>
-        </ul>
-        <a class="tm-menu-page" href="/">Listen live &rarr;</a>
-      </aside>
-      </div><footer class="platform-menu-contact"><span class="platform-menu-eyebrow">Taliferro Tech, LLC</span><div class="platform-menu-contact__details"><span><b>Email:</b> support&#64;taliferro.tech</span><span><b>Phone:</b> 401.646.2662</span><span><b>Office:</b> 1424 11th Ave STE 400, Seattle, WA 98122</span></div><div class="platform-menu-legal" aria-label="Legal and company information"><p>© 2026 Taliferro. Site design <a href="https://taliferro.com/website-development" target="_blank" rel="noopener noreferrer">Taliferro Group</a>. Taliferro Is Registered In The U.S. Patent And Trademark Office. All rights reserved.</p><nav class="platform-menu-legal__links" aria-label="Legal links"><a href="https://todd.taliferro.tech/terms-and-conditions" target="_blank" rel="noopener noreferrer">Terms &amp; Conditions</a><a href="https://todd.taliferro.tech/privacy-rights" target="_blank" rel="noopener noreferrer">Privacy Rights</a><a href="https://todd.taliferro.tech/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a><a href="https://taliferro.com/careers/" target="_blank" rel="noopener noreferrer">Careers</a><span>Version: 1.0</span></nav></div></footer></div>
-  </div>
-  <div class="tm-shell">
-    <div class="tm-page">
-      <a class="tm-back" href="/">&larr; Back to the live stream</a>
-      <h1>Taliferro Music Radio</h1>
-      <p class="tm-tagline">A 24/7 online radio station streaming jazz, R&amp;B, and electronic music from Taliferro Music artists.</p>
-
-      <div class="tm-panel" id="contact">
-        <h2>About</h2>
-        <p>Taliferro Music Radio is an internet-only live stream operated by Taliferro Music. There is no broadcast license or terrestrial signal — you listen entirely through the stream at <a href="https://music.taliferro.com/" style="color: var(--tm-accent);">music.taliferro.com</a>, no app required.</p>
-        <p>The station rotates between a handful of moods (downtempo, jazzy, groove, and more) built from tracks by Taliferro Music's roster of artists.</p>
-      </div>
-
-      <div class="tm-panel">
-        <h2>Station facts</h2>
-        <ul class="tm-facts">
-          <li><span class="tm-label">Genres</span><span>Jazz, R&amp;B, Electronic, Downtempo</span></li>
-          <li><span class="tm-label">Stream</span><span><a href="https://music.taliferro.com/">music.taliferro.com</a></span></li>
-          <li><span class="tm-label">Based in</span><span>Seattle, Washington, USA</span></li>
-          <li><span class="tm-label">Operated by</span><span>Taliferro Music</span></li>
-          <li><span class="tm-label">Email</span><span><a href="mailto:info@taliferro.com">info@taliferro.com</a></span></li>
-          <li><span class="tm-label">Phone</span><span><a href="tel:+14016462662">401.646.2662</a></span></li>
-        </ul>
-      </div>
-
-      <div class="tm-panel">
-        <h2>Find us on</h2>
-        <div class="tm-links">
-          <a href="https://tunein.com/radio/Taliferro-Music-Radio-s358780/" target="_blank" rel="noopener">TuneIn</a>
-          <a href="https://themegaradio.com/en/station/taliferro-music-radio" target="_blank" rel="noopener">MegaRadio</a>
-          <a href="https://streema.com/radios/Taliferro_Music_Radio" target="_blank" rel="noopener">Streema</a>
-        </div>
-      </div>
-
-      <div class="tm-panel">
-        <h2>More from Taliferro</h2>
-        <div class="tm-toolGrid">
-          <div class="tm-toolCard">
-            <img class="tm-toolIcon" src="https://todd.taliferro.tech/assets/find-logo.png" alt="" width="40" height="40" loading="lazy" />
-            <h3>Find</h3>
-            <p>Type any company, topic, or question. Get one strong result — not a list of 30,000 links — with context pills to drill deeper.</p>
-            <a class="tm-toolCta" href="https://find.taliferro.com" target="_blank" rel="noopener">Try Find &rarr;</a>
-            <div class="tm-toolCaption">No account required</div>
-          </div>
-          <div class="tm-toolCard">
-            <img class="tm-toolIcon" src="https://todd.taliferro.tech/assets/outreach/email-signature-builder.png" alt="" width="40" height="40" loading="lazy" />
-            <h3>Email Signature Builder</h3>
-            <p>Build a branded email signature in under two minutes. Pick a layout, add your details, copy the HTML — done.</p>
-            <a class="tm-toolCta" href="https://todd.taliferro.tech/email-signature-builder" target="_blank" rel="noopener">Try it free &rarr;</a>
-            <div class="tm-toolCaption">No account required</div>
-          </div>
-          <div class="tm-toolCard">
-            <img class="tm-toolIcon" src="https://todd.taliferro.tech/assets/sayit/sayit-logo.png" alt="" width="40" height="40" loading="lazy" />
-            <h3>SayIt</h3>
-            <p>Social media built for organizations. Post what you need, find who can help, connect with people who get it.</p>
-            <a class="tm-toolCta" href="https://sayit.taliferro.tech" target="_blank" rel="noopener">Join SayIt &rarr;</a>
-            <div class="tm-toolCaption">Free to join</div>
-          </div>
-          <div class="tm-toolCard">
-            <img class="tm-toolIcon" src="https://todd.taliferro.tech/assets/TODD-icon.png" alt="" width="40" height="40" loading="lazy" />
-            <h3>TODD</h3>
-            <p>Tell TODD what is stuck in your organization. Get a clear next move, the right place to start, or the fastest path forward.</p>
-            <a class="tm-toolCta" href="https://todd.taliferro.com" target="_blank" rel="noopener">Ask TODD now &rarr;</a>
-            <div class="tm-toolCaption">Free guidance · No credit card</div>
-          </div>
-          <div class="tm-toolCard">
-            <img class="tm-toolIcon" src="https://todd.taliferro.tech/assets/lead-vault/lead-vault.png" alt="" width="40" height="40" loading="lazy" />
-            <h3>Lead Vault</h3>
-            <p>Search millions of verified business contacts by industry, role, or location. Browse results at no cost — pay only when you unlock a lead you want.</p>
-            <a class="tm-toolCta" href="https://todd.taliferro.tech/lead-vault" target="_blank" rel="noopener">Search Lead Vault &rarr;</a>
-            <div class="tm-toolCaption">Search free · Pay per lead</div>
-          </div>
-          <div class="tm-toolCard">
-            <img class="tm-toolIcon" src="https://todd.taliferro.tech/assets/marketing/marketing-director-avatar.png" alt="" width="40" height="40" loading="lazy" />
-            <h3>Meet Maya</h3>
-            <p>Get candid marketing advice from your on-call Marketing Director. She will help with message clarity, campaigns, audience focus, and what to fix first.</p>
-            <a class="tm-toolCta" href="https://todd.taliferro.tech/marketing-director" target="_blank" rel="noopener">Talk with Maya &rarr;</a>
-            <div class="tm-toolCaption">Free advice · Paid execution</div>
-          </div>
-        </div>
-      </div>
-
-      <p class="tm-foot">© <span id="tm-year"></span> Taliferro Music</p>
+  <header class="ah">
+    <a class="ah-brand" href="/">
+      <img class="ah-logo ah-logo--round" src="/img/apple-touch-icon.png" alt="" width="36" height="36" />
+      <span class="ah-name"><span class="ah-wide">Taliferro Music<small>Radio</small></span><span class="ah-phone">Music</span></span>
+    </a>
+    <div class="ah-actions">
+      <a class="ah-pill ah-pill--wide" href="/"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><polygon points="6 3 20 12 6 21 6 3" fill="currentColor"/></svg>Listen live</a>
+      <button type="button" class="ah-pill ah-theme" data-tt-theme aria-label="Switch theme"><span data-tt-theme-label>Dark</span></button>
+      <div data-tt-menu></div>
     </div>
-  </div>
+  </header>
+
+  <main class="tm-main tm-about">
+    <section class="tm-intro">
+      <span class="tm-tag">About the station</span>
+      <h1>Taliferro Music Radio</h1>
+      <p>A 24/7 online radio station streaming jazz, R&amp;B, and electronic music from Taliferro Music artists.</p>
+    </section>
+
+    <div class="tm-about-cols">
+      <div class="tm-about-copy">
+        <p>Taliferro Music Radio is an internet-only live stream operated by Taliferro Music. There is no broadcast license or terrestrial signal — you listen entirely through the stream at <a class="tm-link" href="https://music.taliferro.com">music.taliferro.com</a>, no app required.</p>
+        <p>The station rotates between a handful of moods (downtempo, jazzy, groove, and more) built from tracks by Taliferro Music's roster of artists.</p>
+        <p class="tm-eyebrow" style="margin-top:14px">Find us on</p>
+        <div class="tm-pills">
+          <a class="tm-btn" href="https://tunein.com/radio/Taliferro-Music-Radio-s358780/" target="_blank" rel="noopener">TuneIn <span aria-hidden="true">↗</span></a>
+          <a class="tm-btn" href="https://themegaradio.com/en/station/taliferro-music-radio" target="_blank" rel="noopener">MegaRadio <span aria-hidden="true">↗</span></a>
+          <a class="tm-btn" href="https://streema.com/radios/Taliferro_Music_Radio" target="_blank" rel="noopener">Streema <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <dl class="tm-facts" aria-label="Station facts">
+        <div><dt>Genres</dt><dd>Jazz, R&amp;B, Electronic, Downtempo</dd></div>
+        <div><dt>Stream</dt><dd><a href="https://music.taliferro.com">music.taliferro.com</a></dd></div>
+        <div><dt>Based in</dt><dd>Seattle, Washington, USA</dd></div>
+        <div><dt>Operated by</dt><dd>Taliferro Music</dd></div>
+        <div><dt>Email</dt><dd><a href="mailto:info@taliferro.com">info@taliferro.com</a></dd></div>
+        <div><dt>Phone</dt><dd><a href="tel:4016462662">401.646.2662</a></dd></div>
+      </dl>
+    </div>
+
+    <section class="tm-more" aria-labelledby="tm-more-title">
+      <h2 class="tm-eyebrow" id="tm-more-title">More from Taliferro</h2>
+      <div class="tm-more__grid">
+        <article class="tm-product">
+          <span class="um um-chip" data-tint="blue"><span class="um-glyph" data-key="find"></span></span>
+          <h3>Find</h3>
+          <p>Type any company, topic, or question. Get one strong result — not a list of 30,000 links — with context pills to drill deeper.</p>
+          <footer><a href="https://find.taliferro.tech">Try Find →</a><span>No account required</span></footer>
+        </article>
+        <article class="tm-product">
+          <span class="um um-chip" data-tint="violet"><span class="um-glyph" data-key="email-signature"></span></span>
+          <h3>Email Signature</h3>
+          <p>Build a branded email signature in under two minutes. Pick a layout, add your details, copy the HTML — done.</p>
+          <footer><a href="https://signature.taliferro.tech">Try it free →</a><span>No account required</span></footer>
+        </article>
+        <article class="tm-product">
+          <span class="um um-chip" data-tint="pink"><span class="um-glyph" data-key="sayit"></span></span>
+          <h3>SayIt</h3>
+          <p>Social media built for organizations. Post what you need, find who can help, connect with people who get it.</p>
+          <footer><a href="https://sayit.taliferro.tech">Join SayIt →</a><span>Free to join</span></footer>
+        </article>
+        <article class="tm-product">
+          <span class="um um-chip" data-tint="green"><span class="um-glyph" data-key="ask-todd"></span></span>
+          <h3>Ask TODD</h3>
+          <p>Tell TODD what is stuck in your organization. Get a clear next move, the right place to start, or the fastest path forward.</p>
+          <footer><a href="https://ask.taliferro.tech">Ask TODD now →</a><span>Free guidance · No credit card</span></footer>
+        </article>
+        <article class="tm-product">
+          <span class="um um-chip" data-tint="cyan"><span class="um-glyph" data-key="lead-vault"></span></span>
+          <h3>Lead Vault</h3>
+          <p>Search millions of verified business contacts by industry, role, or location. Browse results at no cost — pay only when you unlock a lead you want.</p>
+          <footer><a href="https://lead-vault.taliferro.tech">Search Lead Vault →</a><span>Search free · Pay per lead</span></footer>
+        </article>
+        <article class="tm-product">
+          <span class="um um-chip" data-tint="green"><span class="um-glyph" data-key="maya"></span></span>
+          <h3>Maya</h3>
+          <p>Get candid marketing advice from your on-call Marketing Director. She will help with message clarity, campaigns, audience focus, and what to fix first.</p>
+          <footer><a href="https://maya.taliferro.tech">Talk with Maya →</a><span>Free advice · Paid execution</span></footer>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="tm-foot">
+    <span class="tm-foot__left"><b>TALIFERRO MUSIC</b><a href="mailto:info@taliferro.com">info@taliferro.com</a><a href="tel:4016462662">401.646.2662</a><span>Seattle, Washington, USA</span></span>
+    <span class="tm-foot__left"><a href="/privacy">Privacy Policy</a><span>© 2026 Taliferro Music</span></span>
+  </footer>
   <script>
-    document.getElementById('tm-year').textContent = new Date().getFullYear();
+    window.TT_MENU = {
+      app: 'music',
+      name: 'Taliferro Music',
+      items: [
+        { label: 'Listen live', icon: 'play', url: '/' },
+        { label: 'About', icon: 'info', url: '/about', current: true },
+        { label: 'Privacy', icon: 'shield', url: '/privacy' }
+      ],
+      secondaryItems: [
+        { label: 'iOS App', icon: 'phone', url: 'https://apps.apple.com/us/app/taliferro-music-radio/id6806499542', external: true }
+      ],
+      accountNote: 'Music needs no account. Sign in to use the rest of TODD.',
+      signInUrl: 'https://todd.taliferro.tech/login',
+      signInLabel: 'Sign in with TODD'
+    };
   </script>
-  <script src="js/music-menu.js"></script>
+  <script src="/tt/universal-menu.js" defer></script>
+  <script src="/tt/theme.js" defer></script>
 </body>
 
 </html>
