@@ -219,6 +219,17 @@
         if (!audio.muted) hideUnmuteBtn();
       });
 
+      // GA4 key event: the first time per visit the stream is actually audible
+      // (Tap for sound, the play button, or unmuted autoplay).
+      var heardSent = false;
+      function trackHeard() {
+        if (heardSent || audio.paused || audio.muted || typeof gtag !== 'function') return;
+        heardSent = true;
+        gtag('event', 'radio_play');
+      }
+      audio.addEventListener('playing', trackHeard);
+      audio.addEventListener('volumechange', trackHeard);
+
       // Resuming after a pause would pick up where it stopped — up to the
       // playlist window (~2 min) behind the station, so now-playing would run a
       // song ahead of what's heard. Jump back to the live edge instead.
